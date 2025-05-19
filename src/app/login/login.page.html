@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Logotipo -->
+  <div class="ion-text-center">
+    <img src="https://www.upf.br/_uploads/Conteudo/comunicacao/marca/logo-color-vertical.png" alt="Logotipo" style="max-width: 200px; margin-top: 30px;" />
+  </div>
+
+  <!-- Campos de login -->
+  <ion-list lines="none">
+    <!-- Email -->
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" required [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <!-- Senha -->
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" required [(ngModel)]="senha"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botão de login -->
+  <div class="ion-padding">
+    <ion-button expand="block" [routerLink]="['/home']">Entrar</ion-button>
+  </div>
+
+</ion-content>
