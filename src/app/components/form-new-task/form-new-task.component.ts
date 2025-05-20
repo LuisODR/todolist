@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -8,6 +8,8 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./form-new-task.component.scss'],
 })
 export class FormNewTaskComponent  implements OnInit {
+
+  @Input() param: any;
 
   task = {
     id: Math.floor(Math.random()*100),
@@ -21,7 +23,11 @@ export class FormNewTaskComponent  implements OnInit {
     private modalController: ModalController
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.param){
+      this.task = this.param;
+    }
+  }
 
   close() {
     this.modalController.dismiss(this.task)

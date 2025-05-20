@@ -51,4 +51,23 @@ export class HomePage {
 
   }
 
+
+  deleteTask(id: number) {
+    let index = this.tasks.findIndex(t => t.id == id)
+    this.tasks.splice(index, 1);
+  }
+
+  async editTask(task: any) {
+    const modal = await this.modalController.create({
+      component: FormNewTaskComponent,
+      componentProps: {
+        param: task
+      }
+    })
+    await modal.present()
+    const editTask = await modal.onDidDismiss()
+
+  }
+
 }
+
